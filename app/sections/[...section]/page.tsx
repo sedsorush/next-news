@@ -1,13 +1,13 @@
 import { apiKey, baseUrl } from "@/api/constants";
 import NewsList from "@/components/NewsList";
 import Paginator from "@/components/paginator";
-import { ApiResponse, News, P, SP } from "@/types/news";
+import { ApiResponse, News, SP } from "@/types/news";
 import React from "react";
 
 const SectionalNews = async ({ params }: { params: Promise<SP> }) => {
   const param = await params;
   const section = param.section[0];
-  const currentPageNumber = parseInt(param.section[1])
+  const currentPageNumber = parseInt(param.section[1]);
 
   let list: News[] = [
     {
