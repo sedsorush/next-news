@@ -1,9 +1,11 @@
-import { apiKey, baseUrl } from "@/api/constants";
 import NewsList from "@/components/NewsList";
+import { ApiResponse, News, NP } from "@/types/news";
+import { apiKey, baseUrl } from "@/api/constants";
 import Paginator from "@/components/paginator";
-import { ApiResponse, News } from "@/types/news";
 
-export default async function Home() {
+const NumberedPage = async ({ params }: { params: Promise<NP> }) => {
+  const param = await params;
+  const currentPageNumber = parseInt(param.numberedPages);
   let totalNumOfNews = 0;
   let list: News[] = [
     {
@@ -23,7 +25,7 @@ export default async function Home() {
   ];
   try {
     const response = await fetch(
-      `${baseUrl}/search?page=1&page-size=20&show-fields=thumbnail%2CtrailText&api-key=${apiKey}`
+      `${baseUrl}/search?page=${currentPageNumber}&page-size=20&show-fields=thumbnail%2CtrailText&api-key=${apiKey}`
     );
     const data: ApiResponse = await response.json();
     if (data.response.status === "ok") {
@@ -34,10 +36,15 @@ export default async function Home() {
     console.log(error);
   }
 
+  const totalPageCount = Math.trunc(totalNumOfNews / 20);
+  console.log(totalPageCount);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16">
       <NewsList news={list} />
-      <Paginator currentPageNumber={1} />
+      <Paginator currentPageNumber={currentPageNumber} />
     </div>
   );
-}
+};
+
+export default NumberedPage;
