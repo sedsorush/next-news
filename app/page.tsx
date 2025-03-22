@@ -4,7 +4,7 @@ import Paginator from "@/components/paginator";
 import { ApiResponse, News } from "@/types/news";
 
 export default async function Home() {
-  let totalNumOfNews = 0;
+  // let totalNumOfNews = 0;
   let list: News[] = [
     {
       id: "",
