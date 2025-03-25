@@ -57,3 +57,12 @@
 .image {
     border-radius: 5px;
 }
+
+@media screen and (max-width:1250px) {
+    .newsDetailsContainer .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

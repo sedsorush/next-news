@@ -45,3 +45,34 @@
     background-color: #8ad9fe;
     border: #1A237E 1px solid;
 }
+
+@media screen and (max-width:1500px) {
+    .newsCart {
+        grid-template-columns: repeat(3,400px);
+    }
+}
+@media screen and (max-width:1260px) {
+    .newsCart {
+        grid-template-columns: repeat(3,350px);
+    }
+}
+@media screen and (max-width:1110px) {
+    .newsCart {
+        grid-template-columns: repeat(2,450px);
+    }
+}
+@media screen and (max-width:950px) {
+    .newsCart {
+        grid-template-columns: repeat(2,400px);
+    }
+}
+@media screen and (max-width:840px) {
+    .newsCart {
+        grid-template-columns: repeat(2,350px);
+    }
+}
+@media screen and (max-width:740px) {
+    .newsCart {
+        grid-template-columns: repeat(1,500px);
+    }
+}
