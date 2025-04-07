@@ -40,7 +40,7 @@ const SectionalNews = async ({ params }: { params: Promise<SP> }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16">
       <NewsList news={list} />
-      <Paginator currentPageNumber={currentPageNumber} />
+      <Paginator baseDirectory={"sections/"+param.section[0]} currentPageNumber={currentPageNumber} />
     </div>
   );
 };
