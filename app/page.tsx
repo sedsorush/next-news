@@ -4,7 +4,7 @@ import Paginator from "@/components/paginator";
 import { ApiResponse, News } from "@/types/news";
 
 export default async function Home() {
-  // let totalNumOfNews = 0;
+  let totalNumOfNews = 0;
   let list: News[] = [
     {
       id: "",
@@ -28,7 +28,7 @@ export default async function Home() {
     const data: ApiResponse = await response.json();
     if (data.response.status === "ok") {
       list = data.response.results;
-      // totalNumOfNews = data.response.total;
+      totalNumOfNews = data.response.total;
     }
   } catch (error) {
     console.log(error);
@@ -37,7 +37,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16">
       <NewsList news={list} />
-      <Paginator currentPageNumber={1} />
+      <Paginator currentPageNumber={1} baseDirectory="" />
     </div>
   );
 }

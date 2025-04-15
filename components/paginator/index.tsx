@@ -3,7 +3,7 @@ import styles from "./paginator.module.css";
 
 const Paginator = ({
   currentPageNumber,
-  baseDirectory,
+  baseDirectory
 }: {
   currentPageNumber: number;
   baseDirectory: string;
