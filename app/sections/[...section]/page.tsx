@@ -9,7 +9,6 @@ const SectionalNews = async ({ params }: { params: Promise<SP> }) => {
   const section = param.section[0];
   const currentPageNumber = parseInt(param.section[1]);
 
-  let totalCountOfNews= 0
   let list: News[] = [
     {
       id: "",
@@ -33,7 +32,6 @@ const SectionalNews = async ({ params }: { params: Promise<SP> }) => {
     const data: ApiResponse = await response.json();
     if (data.response.status === "ok") {
       list = data.response.results;
-      totalCountOfNews=data.response.total
     }
   } catch (error) {
     console.log(error);

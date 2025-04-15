@@ -4,7 +4,6 @@ import Paginator from "@/components/paginator";
 import { ApiResponse, News } from "@/types/news";
 
 export default async function Home() {
-  let totalNumOfNews = 0;
   let list: News[] = [
     {
       id: "",
@@ -28,7 +27,6 @@ export default async function Home() {
     const data: ApiResponse = await response.json();
     if (data.response.status === "ok") {
       list = data.response.results;
-      totalNumOfNews = data.response.total;
     }
   } catch (error) {
     console.log(error);
