@@ -6,7 +6,7 @@ const Paginator = ({
   baseDirectory
 }: {
   currentPageNumber: number;
-  baseDirectory: string;
+  baseDirectory?: string;
 }) => {
   return (
     <div className={styles.paginator}>
