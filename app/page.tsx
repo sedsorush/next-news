@@ -33,9 +33,9 @@ export default async function Home() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-10">
       <NewsList news={list} />
-      <Paginator currentPageNumber={1} baseDirectory="" />
+      {list[0].id!==""?<Paginator currentPageNumber={1} baseDirectory="" />:null}
     </div>
   );
 }

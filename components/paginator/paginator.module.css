@@ -2,24 +2,26 @@
     display: flex;
     gap: 8px;
     align-items: center;
+    transition: all 100ms ease;
   }
   
   .paginator p {
-    background-color: #b3e5fc;
+    background-color: #ffffff;
     border-radius: 5px;
     padding: 10px 20px;
+    border: #1A237E 1px solid;
   }
   
   .paginator .active {
-    background-color: #1a237e;
-    color: #b3e5fc;
+    background-color: #b3e5fc;
+    color: #1a237e;
     border-radius: 5px;
     padding: 10px 20px;
   }
   
   .paginator p:hover {
-    background-color: #1a237e;
-    color: #b3e5fc;
+    background-color: #b3e5fc;
+    color: #1a237e;
     cursor: pointer;
   }
   
