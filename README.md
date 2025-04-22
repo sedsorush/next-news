@@ -2,7 +2,6 @@
 
 A modern news application built with Next.js, TypeScript, and Tailwind CSS, featuring real-time news fetching from the NewsAPI.
 
-![Next News Screenshot](https://github.com/sedsorush/next-news/blob/main/public/next-news.png?raw=true)
 
 ## Features
 
